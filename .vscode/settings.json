@@ -1,0 +1,14 @@
+
+{
+    // custom cmake config to point to the builtin lldb-mi
+    "cmake.debugConfig": {
+        "stopAtEntry": false,
+        "MIMode": "lldb",
+        "miDebuggerPath": "${env:HOME}/.vscode/extensions/ms-vscode.cpptools-1.22.11-darwin-arm64/debugAdapters/lldb-mi/bin/lldb-mi",
+        "logging": {
+            "trace": true,
+            "engineLogging": true,
+            "traceResponse": true
+        }
+    }
+}

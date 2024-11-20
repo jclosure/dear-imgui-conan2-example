@@ -17,6 +17,7 @@ add_executable( dear-imgui-conan
                 bindings/imgui_impl_opengl3.h
                 bindings/imgui_impl_opengl3_loader.h
                 app.hpp
+                app_design_crtp.hpp
                 assets/simple-shader.vs
                 assets/simple-shader.fs )
 

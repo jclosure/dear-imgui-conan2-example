@@ -72,17 +72,11 @@ public:
         glfwMakeContextCurrent(window);
         glfwSwapInterval(1); // Enable vsync
 
-        // Setup Dear ImGui context
+        // Setup ImGui context
         IMGUI_CHECKVERSION();
         ImGui::CreateContext();
 
-        // TODO(jh): figure out how to assign this to a class field
-        // io = ImGui::GetIO();
-        // (void)io;
-        // io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard; // Enable Keyboard Controls
-        // io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;  // Enable Gamepad Controls
-
-        // Setup Dear ImGui style
+        // Setup ImGui style
         ImGui::StyleColorsDark();
         // ImGui::StyleColorsLight();
 
@@ -125,7 +119,6 @@ public:
 
     void Run()
     {
-        // our state
         Startup();
 
         // Main loop
@@ -151,14 +144,11 @@ public:
             ImGui_ImplGlfw_NewFrame();
             ImGui::NewFrame();
 
-            // now we already have our frame available
             // the implementor of Update() now can already make draw calls and just focus on the gui
-
             Update();
 
-            // now we proceed to generic rendering and swapping the frame to be displayed
-
             // Rendering
+            // now we proceed to generic rendering and swapping the frame to be displayed
             ImGui::Render();
             int display_w, display_h;
             glfwGetFramebufferSize(window, &display_w, &display_h);

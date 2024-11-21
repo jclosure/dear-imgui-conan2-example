@@ -4,6 +4,7 @@ project(dear-imgui-conan CXX)
 find_package(imgui REQUIRED)
 find_package(glfw3 REQUIRED)
 find_package(glew REQUIRED)
+find_package(glm REQUIRED)
 
 add_executable( dear-imgui-conan
                 main.cpp
@@ -28,4 +29,4 @@ add_custom_command(TARGET dear-imgui-conan
 )
 
 target_compile_definitions(dear-imgui-conan PUBLIC IMGUI_IMPL_OPENGL_LOADER_GLEW)
-target_link_libraries(dear-imgui-conan imgui::imgui GLEW::GLEW glfw)
+target_link_libraries(dear-imgui-conan glm::glm imgui::imgui GLEW::GLEW glfw)

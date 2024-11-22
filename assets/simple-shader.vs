@@ -8,6 +8,7 @@ out vec3 vertexColor;
 uniform float rotation;
 uniform vec2 translation;
 
+
 void main()
 {
 	vec2 rotated_pos;

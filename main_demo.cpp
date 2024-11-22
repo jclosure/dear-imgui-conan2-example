@@ -13,6 +13,8 @@
 #endif
 #include <GLFW/glfw3.h> // Will drag system OpenGL headers
 
+namespace main_demo {
+
 // [Win32] Our example includes a copy of glfw3.lib pre-compiled with VS2010 to maximize ease of testing and compatibility with old VS compilers.
 // To link with VS2010-era libraries, VS2015+ requires linking with legacy_stdio_definitions.lib, which we do using this pragma.
 // Your own project should not be affected, as you are likely to link with a newer binary of GLFW that is adequate for your version of Visual Studio.
@@ -25,13 +27,15 @@
 #include "../libs/emscripten/emscripten_mainloop_stub.h"
 #endif
 
+
+
 static void glfw_error_callback1(int error, const char* description)
 {
     fprintf(stderr, "GLFW Error %d: %s\n", error, description);
 }
 
 // Main code
-int main_demo(int, char**)
+int main(int, char**)
 {
     glfwSetErrorCallback(glfw_error_callback1);
     if (!glfwInit())
@@ -67,14 +71,14 @@ int main_demo(int, char**)
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1); // Enable vsync
 
-    // Setup Dear ImGui context
+    // Setup ImGui context
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO(); (void)io;
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
 
-    // Setup Dear ImGui style
+    // Setup ImGui style
     ImGui::StyleColorsDark();
     //ImGui::StyleColorsLight();
 
@@ -187,4 +191,6 @@ int main_demo(int, char**)
     glfwTerminate();
 
     return 0;
+}
+
 }

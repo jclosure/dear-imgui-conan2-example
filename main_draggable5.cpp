@@ -196,7 +196,7 @@ std::vector<unsigned int> indices = {
         ImGui_ImplOpenGL3_Init("#version 330");
 
         // Swap these to try different lighting fragment shaders
-        GLuint shaderProgram = CreateShaderProgram("vertex-shader-lighting.glsl", "fragment-shader-lighting1.glsl");
+        GLuint shaderProgram = CreateShaderProgram("vertex-shader-1.glsl", "fragment-shader-1.glsl");
         // GLuint shaderProgram = CreateShaderProgram("vertex-shader-lighting.glsl", "fragment-shader-lighting2.glsl");
         
         if (!shaderProgram)

@@ -197,7 +197,7 @@ std::vector<unsigned int> indices = {
 
         // Swap these to try different lighting fragment shaders
         GLuint shaderProgram = CreateShaderProgram("vertex-shader-1.glsl", "fragment-shader-1.glsl");
-        // GLuint shaderProgram = CreateShaderProgram("vertex-shader-lighting.glsl", "fragment-shader-lighting2.glsl");
+        // GLuint shaderProgram = CreateShaderProgram("vertex-shader-1.glsl", "fragment-shader-2.glsl");
         
         if (!shaderProgram)
             return -1;
